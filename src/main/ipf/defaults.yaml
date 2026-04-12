@@ -1,0 +1,15 @@
+## Number of replicas of this service 
+replicas: 1
+
+## Maximum memory this service can acquire
+memory: 1G
+
+## Maximum attempts of restarts in case of failure
+## (0 (zero) indicates infinite restarts)
+max-restart-attempts: 50
+
+## additional options for the JVM
+jvm-options: ''
+
+## Port the server is listening for incoming requests
+port: 8088

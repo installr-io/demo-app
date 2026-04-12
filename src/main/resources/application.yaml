@@ -1,0 +1,10 @@
+quarkus:
+    banner:
+        enabled: false
+
+    devservices:
+        enabled: false
+
+    container-image:
+        registry: ghcr.io
+        group: installr-io

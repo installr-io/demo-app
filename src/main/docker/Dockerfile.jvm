@@ -1,0 +1,19 @@
+FROM ghcr.io/installr-io/uci:jre21-1
+LABEL org.opencontainers.image.source=https://github.com/installr-io/demo-app
+
+# We make four distinct layers so if there are application changes the library layers can be re-used
+COPY --chown=185 target/quarkus-app/lib/ /deployments/lib/
+COPY --chown=185 target/quarkus-app/*.jar /deployments/
+COPY --chown=185 target/quarkus-app/app/ /deployments/app/
+COPY --chown=185 target/quarkus-app/quarkus/ /deployments/quarkus/
+
+EXPOSE 8080
+
+## Set environment
+ENV JVM_OPTIONS=
+ENV UCI_JRE_CUSTOM_OPTS=" \
+-Dquarkus.http.host=0.0.0.0 \
+-Djava.util.logging.manager=org.jboss.logmanager.LogManager \
+${JVM_OPTIONS}"
+## Run application
+ENTRYPOINT [ "bin/run-java", "-jar", "/deployments/quarkus-run.jar" ]
