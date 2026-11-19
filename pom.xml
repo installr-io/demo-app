@@ -183,7 +183,7 @@
                 <artifactId>ipf-maven-plugin</artifactId>
                 <version>${ipf-maven-plugin.version}</version>
                 <configuration>
-                    <repositoryUrl>http://localhost:9317/repositories/demo</repositoryUrl>
+                    <repositoryUrl>https://conexus.tugraz.at/atrium/repositories/installr-io-demo</repositoryUrl>
                 </configuration>
             </plugin>
         </plugins>
