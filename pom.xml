@@ -46,7 +46,7 @@
         <docker.image-version>${project.version}-${build.revision}</docker.image-version>
 
         <!-- plugin versions -->
-        <ipf-maven-plugin.version>0.1.0</ipf-maven-plugin.version>
+        <ipf-maven-plugin.version>0.2.0</ipf-maven-plugin.version>
 
         <!-- skip install & deploy -->
         <maven.install.skip>true</maven.install.skip>
