@@ -29,7 +29,7 @@
     </parent>
 
     <artifactId>demo-app</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0-SNAPSHOT</version>
 
     <description>demo-app - A demo application</description>
     <url>https://installr.io</url>
