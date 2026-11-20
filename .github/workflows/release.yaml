@@ -29,11 +29,11 @@ jobs:
               with:
                   registry: ${{ env.REGISTRY }}
                   username: ${{ github.actor }}
-                  password: ${{ secrets.PA_TOKEN }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Build
               env:
-                  GITHUB_TOKEN: ${{ secrets.PA_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: | 
                 mvn -B clean verify -Dquarkus.container-image.build=true \
                     -Dquarkus.container-image.push=true ipf:package
