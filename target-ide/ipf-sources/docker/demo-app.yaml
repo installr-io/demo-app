@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+    srv:
+        hostname: demo-app
+        image: ghcr.io/installr-io/demo-app:0.3.0-SNAPSHOT-${build.revision}
+        deploy:
+            mode: replicated
+            replicas: ${replicas}
+            resources:
+                limits:
+                    memory: ${memory}
+            restart_policy:
+                condition: any
+                delay: 2s
+                max_attempts: ${max_restart_attempts}
+                window: 30m
+        ports:
+            - ${port}:8080
+        environment:
+            - JVM_OPTIONS=${jvm_options}
