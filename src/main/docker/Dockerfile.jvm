@@ -1,5 +1,6 @@
 FROM ghcr.io/installr-io/uci:jre21-1
 LABEL org.opencontainers.image.source=https://github.com/installr-io/demo-app
+LABEL org.opencontainers.image.licenses=AGPL-3.0-only
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
 COPY --chown=185 target/quarkus-app/lib/ /deployments/lib/
